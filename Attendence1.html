@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ATTENDENCE MANAGEMENT SYSTEM - DARSHAN UNIVERSITY</title>
+	<style>
+     #maindiv{
+            margin: 100px 100px;
+            position: fixed;
+            width: 80%;
+            height: 30%;
+            color: black;
+            font-weight: 100;
+            background: linear-gradient(to bottom, #33ccff 20%, #ff99cc 80%);;
+        }
+      h1{
+			color: red;
+			font-family: Cooper;
+  		}
+  		h2{
+  			color: black;
+  			font-family: Copperplate Gothic;
+  		}
+
+      .btn {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .btn:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-btn 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing-btn {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      .btn:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body>
+	<h1>Darshan University</h1>
+	<h2>Attendance Management System</h2>
+ <button class="btn" onclick="Cheakall()">Cheakall</button>
+    <button class="btn" onclick="UnCheakall()">Uncheckall</button>
+    <br>
+     <div>
+       <textarea id="maindiv"></textarea>
+     </div>
+    
+	<script type="text/javascript">
+		document.write("<hr>");
+		document.write("Class W"+"</br>");
+		for(i=101; i<159; i++)
+		{
+			document.write("<input type='checkbox' onclick='abc()' value="+i+">"+i+"</br>");
+		}
+        document.write("<hr>");
+		document.write("Class X"+"</br>");
+		for(i=201; i<259; i++)
+		{
+			document.write("<input type='checkbox' onclick='abc()' value="+i+">"+i+"</br>");
+		}
+        document.write("<hr>");
+		document.write("Class Y"+"</br>");
+		for(i=301; i<359; i++)
+		{
+			document.write("<input type='checkbox' onclick='abc()' value="+i+">"+i+"</br>");
+		}
+		document.write("<hr>");
+		document.write("Class Z"+"</br>");
+		for(i=401; i<459; i++)
+		{
+			document.write("<input type='checkbox' onclick='abc()' value="+i+">"+i+"</br>");
+		}
+
+         var allstu=document.getElementsByTagName("input");
+       
+        function abc(){
+           
+           
+            allabs="";
+            for(var i=0;i<allstu.length;i++){
+                if(!allstu[i].checked){
+                    allabs+=allstu[i].value + ",";
+                }
+            }
+            
+            document.getElementById("maindiv").innerHTML=allabs.substring(0,allabs.length-1);
+        }
+        function Cheakall(){
+            
+            console.log(allstu);
+            for(var i=0;i<allstu.length;i++){
+                allstu[i].checked=true;
+            }
+        }
+        function UnCheakall(){
+            
+            for(var i=0;i<allstu.length;i++){
+                allstu[i].checked=false;
+            }
+        }
+
+	</script>
+</body>
+</html>
